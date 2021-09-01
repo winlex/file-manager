@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-viewer',
@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
+    @Input() id:number = 0;
+    @Input() name:string = '';
+    @Input() text:string = '';
+    @Input() type:number = 0;
 
-    title = 'test';
+    @Input() modeNew:boolean = false;
 
     constructor() { }
   

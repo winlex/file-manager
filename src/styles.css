@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+.block {
+    padding: .5rem 1rem;
+    border: 1px dashed #ccc;
+    margin-bottom: 1rem;
+}
+
+button {
+    margin-left: 5px;
+}

@@ -1,6 +1,8 @@
-<div class="card">
-    <h2>Viewer</h2>
-    {{ title }}
-    <button (click)="changeTitle()">test</button>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, maiores?</p>
+<div class="block">
+    <input type="text" [(ngModel)]="name">
+    <p>File type: {{type == 1 ? 'File' : 'Folder'}}</p>
+    <textarea [(ngModel)]="text" *ngIf="type == 1"></textarea>
+    <button *ngIf="!modeNew">Save</button>
+    <button *ngIf="!modeNew">Delete</button>
+    <button *ngIf="modeNew">Add File</button>
 </div>
