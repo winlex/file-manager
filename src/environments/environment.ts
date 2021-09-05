@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  APIEndpoint: 'https://todo-list-my.herokuapp.com/'
+  APIEndpoint: 'http://localhost:8000'
 };
 
 /*

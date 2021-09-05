@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { File } from '../app.component';
 
 @Component({
     selector: 'app-viewer',
@@ -6,12 +7,21 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./viewer.component.css']
 })
 export class ViewerComponent implements OnInit {
-    @Input() id:number = 0;
-    @Input() name:string = '';
-    @Input() text:string = '';
-    @Input() type:number = 0;
+    @Input() file:File = {
+        id: 0,
+        name: '',
+        content: '',
+        type: 0,
+        path: ''
+    }
 
     @Input() modeNew:boolean = false;
+
+    @Output() save = new EventEmitter<File>();
+    @Output() delete = new EventEmitter<File>();
+    @Output() add = new EventEmitter<File>();
+    @Output() restore = new EventEmitter<File>();
+    @Output() permanently = new EventEmitter<File>();
 
     constructor() { }
   
@@ -19,7 +29,27 @@ export class ViewerComponent implements OnInit {
     }
 
     changeTitle() {
-        
+
+    }
+
+    onSave() {
+        this.save.emit(this.file);
+    }
+
+    onDelete() {
+        this.delete.emit(this.file);
+    }
+
+    onAdd() {
+        this.add.emit(this.file);
+    }
+
+    onRestore() {
+        this.restore.emit(this.file);
+    }
+
+    onPermanently() {
+        this.restore.emit(this.file);
     }
   
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-file',
@@ -10,12 +10,18 @@ export class FileComponent implements OnInit {
   @Input() name: string = '';
   @Input() type: number = 0;
 
+  @Output() onSelected = new EventEmitter<number>();
+
   iconFile: string = '../../assets/file.ico';
   iconFolder: string = '../../assets/folder.ico';
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  select() {
+    this.onSelected.emit(this.id);
   }
 
 }

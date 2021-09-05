@@ -1,3 +1,7 @@
 .block {
     clear: both;
 }
+
+a {
+    float: right;
+}

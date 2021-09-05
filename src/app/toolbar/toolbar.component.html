@@ -1,6 +1,10 @@
 <div class="block">
-    <button>New Folder</button>
-    <button>New File</button>
-    <button>Trash</button>
-    <button>Root Dir</button>
+    <button [disabled]="folder.id == 3" (click)="newD()">New Folder</button>
+    <button [disabled]="folder.id == 3" (click)="newF()">New File</button>
+    <button (click)="openT()">Trash</button>
+    <button (click)="openR()">Root Dir</button>
+    <a *ngIf="loading; else done">Folder loading...</a>
+    <ng-template #done>
+        <a>Folder loaded</a>
+    </ng-template>
 </div>
