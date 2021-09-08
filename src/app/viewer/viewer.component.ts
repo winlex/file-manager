@@ -12,7 +12,8 @@ export class ViewerComponent implements OnInit {
         name: '',
         content: '',
         type: 0,
-        path: ''
+        path: '',
+        date_create: { date: ''}
     }
 
     @Input() modeNew:boolean = false;
