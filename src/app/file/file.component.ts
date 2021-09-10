@@ -10,18 +10,17 @@ export class FileComponent implements OnInit {
   @Input() name: string = '';
   @Input() type: number = 0;
 
-  @Output() onSelected = new EventEmitter<number>();
+  @Output() selected = new EventEmitter<number>();
 
   iconFile: string = '../../assets/file.ico';
   iconFolder: string = '../../assets/folder.ico';
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit(): void {
-  }
-  
-  select() {
-    this.onSelected.emit(this.id);
+  ngOnInit (): void {
   }
 
+  select () {
+    this.selected.emit(this.id);
+  }
 }

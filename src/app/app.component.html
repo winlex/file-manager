@@ -2,7 +2,7 @@
     <h1>File Manager</h1>
     <app-list 
         [list]=listFiles
-        (onSelectedMain)="onSelectedFile($event)"
+        (selectedMain)="onSelectedFile($event)"
     ></app-list>
     <app-viewer 
         [file]="currentFile" 

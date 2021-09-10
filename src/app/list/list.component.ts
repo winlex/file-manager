@@ -7,17 +7,16 @@ import { File } from '../app.component';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  @Input() list:File[] = [];
+  @Input() list: File[] = [];
 
-  @Output() onSelectedMain = new EventEmitter<number>();
+  @Output() selectedMain = new EventEmitter<number>();
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
-  onSelected(id_file: number) {
-    this.onSelectedMain.emit(id_file);
+  onSelected (idFile: number) {
+    this.selectedMain.emit(idFile);
   }
-
 }

@@ -1,10 +1,10 @@
 <div class="block">
     <input type="text" [(ngModel)]="file.name">
-    <p>File type: {{file.type == 1 ? 'File' : 'Folder'}}</p>
-    <textarea [(ngModel)]="file.content" *ngIf="file.type == 1"></textarea>
-    <button (click)="onSave()" *ngIf="!modeNew && file.path != 'trash/'">Save</button>
-    <button (click)="onDelete()" *ngIf="!modeNew && file.path != 'trash/'">Delete</button>
-    <button (click)="onAdd()" *ngIf="modeNew && file.path != 'trash/'">Add File</button>
-    <button (click)="onRestore()" *ngIf="file.path == 'trash/'">Restore File</button>
-    <button (click)="onPermanently()" *ngIf="file.path == 'trash/'">Permanently File</button>
+    <p>File type: {{file.type === 1 ? 'File' : 'Folder'}}</p>
+    <textarea [(ngModel)]="file.content" *ngIf="file.type === 1"></textarea>
+    <button (click)="onSave()" *ngIf="!modeNew && file.path !== 'trash/'">Save</button>
+    <button (click)="onDelete()" *ngIf="!modeNew && file.path !== 'trash/'">Delete</button>
+    <button (click)="onAdd()" *ngIf="modeNew && file.path !== 'trash/'">Add File</button>
+    <button (click)="onRestore()" *ngIf="file.path === 'trash/'">Restore File</button>
+    <button (click)="onPermanently()" *ngIf="file.path === 'trash/'">Permanently File</button>
 </div>

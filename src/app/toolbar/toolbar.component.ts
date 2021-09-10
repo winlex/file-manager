@@ -7,14 +7,15 @@ import { File } from '../app.component';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  @Input() folder:File = {
-      id: 0,
-      name: '',
-      content: '',
-      type: 0,
-      path: '',
-      date_create: { date: ''}
-  }
+  @Input() folder: File = {
+    id: 0,
+    name: '',
+    content: '',
+    type: 0,
+    path: '',
+    date_create: { date: '' }
+  };
+
   @Input() loading: boolean = false;
 
   @Output() newDir = new EventEmitter();
@@ -22,25 +23,24 @@ export class ToolbarComponent implements OnInit {
   @Output() openRoot = new EventEmitter();
   @Output() openTrash = new EventEmitter();
 
-  constructor() { }
+  constructor () { }
 
-  ngOnInit(): void {
+  ngOnInit (): void {
   }
 
-  newD() {
+  newD () {
     this.newDir.emit();
   }
 
-  newF() {
+  newF () {
     this.newFile.emit();
   }
 
-  openR() {
+  openR () {
     this.openRoot.emit();
   }
 
-  openT() {
+  openT () {
     this.openTrash.emit();
   }
-
 }
